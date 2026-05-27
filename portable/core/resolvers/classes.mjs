@@ -134,7 +134,7 @@ export async function matchComponentsCssFiles(componentsDir, cssDir) {
     if (!validExtensions.some(ext => component.endsWith(ext)))
       continue;
 
-    const dir = component.split('/');
+    const dir = component.split(/[/\\]/g);
     const name = dir.pop().split('.')[0];
     
     let indexRef = indexing;

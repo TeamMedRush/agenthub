@@ -55,6 +55,18 @@ async function createContext(isDev) {
     define: {
       'process.env.NODE_ENV': JSON.stringify(
         isDev ? 'development' : 'production'
+      ),
+      'process.env.API_BASE_URL': JSON.stringify(
+        process.env.API_BASE_URL ?? 'http://localhost:8000'
+      ),
+      'process.env.API_TIMEOUT_MS': JSON.stringify(
+        process.env.API_TIMEOUT_MS ?? '10000'
+      ),
+      'process.env.API_AUTH_HEADER': JSON.stringify(
+        process.env.API_AUTH_HEADER ?? 'token'
+      ),
+      'process.env.ENABLE_MOCK_DATA': JSON.stringify(
+        process.env.ENABLE_MOCK_DATA ?? 'false'
       )
     },
     alias: {

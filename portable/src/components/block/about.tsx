@@ -1,48 +1,58 @@
-import { TripInfo } from "@components/kit/trip-info";
-import { Container } from "@components/ui/structure/container";
-import { Heading } from "@components/ui/text/heading";
-import { TripData } from "@interfaces/trip-data";
-import { useClasses } from "@styles";
+import type { AuthSession, User } from "@interfaces/app";
 
-export function About() {
-  const trips: TripData[] = [
-    {
-      id: "trip1",
-      scale: "small",
-      picks: [],
-      drop: {
-        name: "123 Main St, Springfield",
-        latitude: 37.7749,
-        longitude: -122.4194,
-      },
-      payout: {
-        amount: 10.00,
-        currency: "USD"
-      },
-      stats: {
-        time: 10,
-        distance: 5
-      }
-    }
-  ];
+interface AboutProps {
+  session: AuthSession<User> | null;
+}
 
+const highlights = [
+  {
+    title: "Accept high-signal pickups",
+    description: "Review pending medicine deliveries, item counts, payout estimates, and rider notes in one place.",
+  },
+  {
+    title: "Work with backend reality",
+    description: "Pickup pharmacy details and delivery progression are clearly marked when the backend has not exposed them yet.",
+  },
+  {
+    title: "Stay productive offline",
+    description: "Recent delivery data is cached locally so detail pages remain useful even without a dedicated detail endpoint.",
+  },
+];
+
+export function About({ session }: AboutProps) {
   return (
-    <Container className={useClasses("about")}>
-      <Heading size="max">
-        Hello, Agent!
-      </Heading>
+    <section className="about">
+      <div className="about__hero">
+        <div className="about__copy">
+          <p className="about__eyebrow">Delivery rider workspace</p>
+          <h2>
+            Dispatch, accept, and track medicine deliveries without leaving the MedRush flow.
+          </h2>
+          <p className="about__summary">
+            Agent Hub is wired to the current MedRush backend contract. It gives riders a sharp dashboard now,
+            while keeping missing server capabilities visible instead of hiding them behind fake states.
+          </p>
+        </div>
 
-      <Heading size="medium">
-        Pick the delivery you want to make!
-      </Heading>
+        <div className="about__actions">
+          <a className="about__button about__button--primary" href={session ? "/dashboard" : "/login"}>
+            {session ? "Open dashboard" : "Sign in"}
+          </a>
+          <a className="about__button about__button--secondary" href={session ? "/deliveries" : "/register"}>
+            {session ? "Browse deliveries" : "Create rider account"}
+          </a>
+        </div>
+      </div>
 
-      <Container>
-        {trips.map(trip => <TripInfo
-          key={trip.id}
-          data={trip}
-        />)}
-      </Container>
-    </Container>
+      <div className="about__grid">
+        {highlights.map((highlight) => (
+          <article className="about__card" key={highlight.title}>
+            <h3>{highlight.title}</h3>
+            <p>{highlight.description}</p>
+          </article>
+        ))}
+      </div>
+    </section>
   );
 }
 

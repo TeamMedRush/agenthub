@@ -1,0 +1,289 @@
+@import '../kit/app-shell.css';
+@import '../kit/state-panel.css';
+
+.view-stack {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.view-section__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.view-section__header h2 {
+  font-size: clamp(1.8rem, 3vw, 2.7rem);
+  line-height: 1.05;
+}
+
+.view-section__header p {
+  color: var(--color-muted);
+  line-height: 1.65;
+  max-width: 48rem;
+}
+
+.view-section__eyebrow {
+  margin-bottom: 0.4rem;
+  color: var(--color-focus-strong);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.metric-grid,
+.feature-grid,
+.detail-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.metric-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.feature-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.detail-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.metric-card,
+.delivery-card,
+.detail-card,
+.view-form-panel,
+.view-error-banner,
+.view-success-banner {
+  border: 1px solid rgba(16, 24, 40, 0.08);
+  border-radius: 1.4rem;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: var(--shadow-soft);
+}
+
+.metric-card,
+.detail-card,
+.view-form-panel {
+  padding: 1.4rem;
+}
+
+.metric-card {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.metric-card span {
+  color: var(--color-muted);
+  font-size: 0.92rem;
+}
+
+.metric-card strong {
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+}
+
+.metric-card p {
+  color: var(--color-muted);
+  line-height: 1.5;
+}
+
+.delivery-card {
+  display: grid;
+  gap: 0.95rem;
+  padding: 1.2rem;
+}
+
+.delivery-card__topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.delivery-card__status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 999px;
+  background: rgba(255, 142, 72, 0.16);
+  color: var(--color-focus-strong);
+  text-transform: capitalize;
+  font-weight: 700;
+}
+
+.delivery-card__status--accepted {
+  background: rgba(48, 173, 110, 0.18);
+  color: var(--color-success-strong);
+}
+
+.delivery-card h3 {
+  font-size: 1.2rem;
+}
+
+.delivery-card__note {
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.delivery-card__stats {
+  display: grid;
+  gap: 0.75rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.delivery-card__stats div {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.75rem;
+  border-radius: 1rem;
+  background: rgba(248, 122, 42, 0.08);
+}
+
+.delivery-card__stats span {
+  color: var(--color-muted);
+  font-size: 0.86rem;
+}
+
+.delivery-card__actions,
+.view-form__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+}
+
+.view-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.view-button--primary {
+  background: var(--color-focus);
+  color: var(--color-white);
+}
+
+.view-button--secondary,
+.view-button--ghost {
+  border: 1px solid rgba(16, 24, 40, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.detail-card {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.detail-card--wide {
+  gap: 0.9rem;
+}
+
+.detail-card__eyebrow {
+  color: var(--color-focus-strong);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.detail-card p {
+  color: var(--color-muted);
+  line-height: 1.65;
+}
+
+.detail-list {
+  display: grid;
+  gap: 0.8rem;
+  list-style: none;
+}
+
+.detail-list li {
+  display: grid;
+  gap: 0.2rem;
+  padding: 0.85rem 1rem;
+  border-radius: 1rem;
+  background: rgba(16, 24, 40, 0.04);
+}
+
+.view-form-panel {
+  display: grid;
+  gap: 1.1rem;
+}
+
+.view-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.view-form label {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.view-form span {
+  font-size: 0.92rem;
+  font-weight: 600;
+}
+
+.view-form input,
+.view-form textarea,
+.view-form select {
+  width: 100%;
+  min-height: 3rem;
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(16, 24, 40, 0.12);
+  background: rgba(255, 255, 255, 0.92);
+}
+
+.view-form textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.view-form__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.view-error-banner,
+.view-success-banner {
+  display: grid;
+  gap: 0.2rem;
+  padding: 1rem 1.1rem;
+}
+
+.view-error-banner {
+  background: rgba(255, 87, 87, 0.08);
+  color: var(--color-danger-strong);
+}
+
+.view-success-banner {
+  background: rgba(48, 173, 110, 0.12);
+  color: var(--color-success-strong);
+}
+
+@media (max-width: 64rem) {
+  .metric-grid,
+  .feature-grid,
+  .detail-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 42rem) {
+  .delivery-card__stats,
+  .view-form__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

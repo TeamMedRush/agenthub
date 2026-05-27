@@ -1,30 +1,64 @@
-<div align="center">
+# MedRush Agent Hub
 
-# GraphScript
+Delivery rider frontend for the MedRush platform. This app is built on the existing portable Preact template and is wired to the current backend contract documented in `server/FRONTEND_API_CONTRACT.md`.
 
-GraphScript is an experimental node-based programming environment focused on building scalable applications through visual logic, modular systems, and script-driven workflows.
+## Setup
 
-[![Sponsor](https://img.shields.io/badge/Sponsor%20PROJECT-db61a2?style=for-the-badge&logo=github)](https://github.com/sponsors/AttAditya)
+```bash
+cd portable
+npm install
+npm run dev
+```
 
-</div>
+Build for production:
 
-## Contributors
+```bash
+cd portable
+npm run build
+```
 
-<a href="https://github.com/graphscript-labs/graphscript-labs.github.io/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=graphscript-labs/graphscript-labs.github.io" />
-</a>
+## Environment Variables
 
-## Support
+Set these before running `npm run dev` or `npm run build`:
 
-If you find this project useful, please consider supporting it by **starring the GitHub repository** or sharing it with others who might benefit from it.
+- `API_BASE_URL`: Backend base URL. Default: `http://localhost:8000`
+- `API_TIMEOUT_MS`: Request timeout in milliseconds. Default: `10000`
+- `API_AUTH_HEADER`: Auth header key expected by the backend. Default: `token`
+- `ENABLE_MOCK_DATA`: Set to `true` or `1` to allow small mock delivery fallbacks when backend data is unavailable
 
-Your support helps in the continued development and improvement of the project.
+## Available Routes
 
-You can also **contribute to the project** by submitting issues, suggesting features, or even contributing code through pull requests.
+- `/`
+- `/login`
+- `/register`
+- `/dashboard`
+- `/deliveries`
+- `/deliveries/:id`
+- `/active`
+- `/profile`
 
-You can also sponsor the project on GitHub Sponsors: [GitHub Sponsors - AttAditya](https://github.com/sponsors/AttAditya)
+## Features Implemented
 
----
+- Agent login, registration, logout, and local session persistence
+- Pending delivery dashboard backed by `GET /api/v1/agent/orders/pending`
+- Accept delivery action backed by `POST /api/v1/agent/orders/:order_id/accept`
+- Delivery detail pages using live list data plus local cache fallback because a single-delivery endpoint is missing
+- Active deliveries view based on accepted delivery cache
+- Profile update flow backed by `PATCH /api/v1/agent/account`
+- Centralized API client, shared interfaces, loading states, empty states, and error states
 
-> _Made with <3 by [AttAditya](https://github.com/AttAditya)_
+## Known Limitations
 
+- No backend profile-read or `me` endpoint, so profile screens start from cached auth payloads
+- No assigned-deliveries endpoint after accept, so active runs are stored locally
+- No delivery lifecycle endpoints beyond accept, so pickup, in-transit, and delivered actions remain TODO states in the UI
+- Pickup pharmacy details are shown only when available in the existing order payload
+- Browser requests can fail if backend CORS is not enabled for the frontend origin
+
+## Backend Endpoint Assumptions
+
+- `POST /api/v1/auth/signup`
+- `POST /api/v1/auth/signin`
+- `POST|PATCH|PUT /api/v1/agent/account`
+- `GET /api/v1/agent/orders/pending`
+- `POST /api/v1/agent/orders/:order_id/accept`

@@ -1,11 +1,17 @@
-import { render } from 'preact';
-import { HomePage } from '@routes/home';
+import { render } from "preact";
+
+import { AuthProvider } from "@contexts/auth-context";
+import { HomePage } from "@routes/home";
 
 function App() {
-  return <HomePage />;
+  return (
+    <AuthProvider>
+      <HomePage />
+    </AuthProvider>
+  );
 }
 
-const appDiv = document.getElementById('app')!;
+const appDiv = document.getElementById("app")!;
 render(<App />, appDiv);
 appDiv.focus();
 

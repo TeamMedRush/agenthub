@@ -1,0 +1,48 @@
+.state-panel {
+  display: grid;
+  gap: 0.55rem;
+  padding: 1.35rem;
+  border-radius: 1.35rem;
+  border: 1px solid rgba(16, 24, 40, 0.08);
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: var(--shadow-soft);
+}
+
+.state-panel__eyebrow {
+  color: var(--color-focus-strong);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.state-panel h2 {
+  font-size: clamp(1.4rem, 3vw, 2rem);
+}
+
+.state-panel p {
+  color: var(--color-muted);
+  line-height: 1.6;
+}
+
+.state-panel__action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8rem;
+  width: fit-content;
+  padding: 0.7rem 1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.76);
+  border: 1px solid rgba(16, 24, 40, 0.08);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.state-panel--danger {
+  background: rgba(255, 244, 244, 0.95);
+}
+
+.state-panel--warning {
+  background: rgba(255, 249, 235, 0.95);
+}

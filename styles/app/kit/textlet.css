@@ -1,0 +1,43 @@
+.textlet {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 1.5rem;
+  background-color: var(--color-focus);
+  border-radius: 0.75rem;
+}
+
+.textlet-title {
+  padding: 0;
+  color: var(--color-white);
+  align-self: stretch;
+  text-align: center;
+  border-radius: 0.75rem;
+}
+
+.textlet-icon {
+  min-width: 5rem;
+  min-height: 5rem;
+  flex-shrink: 0;
+  stroke-width: 2;
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+  color: var(--color-white);
+}
+
+.textlet-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: var(--color-white);
+  align-self: stretch;
+}
+
+@media (max-width: 800px) {
+  .textlet {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
+

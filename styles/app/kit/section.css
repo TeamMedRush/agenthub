@@ -1,0 +1,26 @@
+.section {
+  padding: 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.section-content {
+  padding: 0 8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+@media (max-width: 1200px) {
+  .section-content {
+    padding: 0 2rem;
+  }
+}
+
+@media (max-width: 800px) {
+  .section {
+    padding: 2rem 2rem;
+  }
+}
+

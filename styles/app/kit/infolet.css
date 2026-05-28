@@ -1,0 +1,42 @@
+.infolet {
+  display: flex;
+  align-items: start;
+  gap: 1.25rem;
+  padding: 1.5rem;
+  background-color: var(--color-focus);
+  border-radius: 0.75rem;
+}
+
+.infolet-icon-container {
+  padding: 0.5rem 0;
+}
+
+.infolet-icon {
+  min-width: 3.5rem;
+  min-height: 3.5rem;
+  flex-shrink: 0;
+  stroke-width: 2;
+  color: var(--color-shade);
+  background-color: var(--color-shine);
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+}
+
+.infolet-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  color: var(--color-white);
+}
+
+@media (max-width: 800px) {
+  .infolet {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .infolet-icon-container {
+    padding: 0;
+  }
+}
+

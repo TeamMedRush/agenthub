@@ -1,0 +1,29 @@
+.node-bg {
+  --rows: attr(data-rows number);
+  --cols: attr(data-cols number);
+  
+  padding: 2rem;
+  pointer-events: none;
+
+  display: grid;
+  gap: 4rem;
+
+  grid-template-rows: repeat(var(--rows), 1fr);
+  grid-template-columns: repeat(var(--cols), 1fr);
+  
+  transform: translate(-50%, -50%);
+  position: absolute;
+  overflow: hidden;
+  
+  top: 50%;
+  left: 50%;
+
+  aspect-ratio: 1.769231;
+  height: 100%;
+}
+
+.node-bg-node {
+  background-color: currentColor;
+  border-radius: 100%;
+}
+

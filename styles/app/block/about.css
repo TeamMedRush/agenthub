@@ -1,0 +1,100 @@
+.about {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.about__hero {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1.75rem;
+  border: 1px solid rgba(16, 24, 40, 0.08);
+  border-radius: 1.75rem;
+  background:
+    radial-gradient(circle at top right, rgba(63, 113, 255, 0.22), transparent 24rem),
+    linear-gradient(155deg, rgba(255, 255, 255, 0.96), rgba(255, 244, 232, 0.96));
+  box-shadow: var(--shadow-soft);
+}
+
+.about__copy {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.about__eyebrow {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--color-focus-strong);
+}
+
+.about__copy h2 {
+  max-width: 14ch;
+  font-size: clamp(2.2rem, 5vw, 4.6rem);
+  line-height: 1.02;
+}
+
+.about__summary {
+  max-width: 56rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+  font-size: 1.02rem;
+}
+
+.about__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+}
+
+.about__button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.8rem 1.2rem;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.about__button--primary {
+  background: var(--color-focus);
+  color: var(--color-white);
+}
+
+.about__button--secondary {
+  border: 1px solid rgba(16, 24, 40, 0.08);
+  background: rgba(255, 255, 255, 0.74);
+}
+
+.about__grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about__card {
+  display: grid;
+  gap: 0.6rem;
+  padding: 1.2rem;
+  border-radius: 1.35rem;
+  border: 1px solid rgba(16, 24, 40, 0.07);
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.about__card h3 {
+  font-size: 1.12rem;
+}
+
+.about__card p {
+  color: var(--color-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 56rem) {
+  .about__grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+

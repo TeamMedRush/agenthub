@@ -1,0 +1,94 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+
+  font-family: inherit;
+  
+  background: transparent;
+  color: inherit;
+  
+  outline: none;
+  border: none;
+  cursor: inherit;
+  
+  transition:
+    color 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
+    font-size 0.3s ease-in-out,
+    transform 0.3s ease-in-out,
+    translate 0.3s ease-in-out,
+    scale 0.3s ease-in-out,
+    filter 0.3s ease-in-out,
+    opacity 0.3s ease-in-out,
+    box-shadow 0.3s ease-in-out,
+    outline 0.3s ease-in-out,
+    border-color 0.3s ease-in-out,
+    border-radius 0.3s ease-in-out,
+    text-shadow 0.3s ease-in-out;
+}
+
+html, body, #app {
+  min-height: 100%;
+  width: 100%;
+  height: 100%;
+
+  font-size: 16px;
+  font-family: var(--font-sans);
+  
+  background-color: var(--color-shine);
+  color: var(--color-shade);
+  
+  cursor: default;
+  position: relative;
+  transition: none;
+  overflow-x: hidden;
+}
+
+html, body {
+  background-color: var(--color-shine);
+}
+
+body {
+  background:
+    radial-gradient(circle at top left, rgba(255, 123, 53, 0.18), transparent 22rem),
+    radial-gradient(circle at 85% 10%, rgba(63, 113, 255, 0.15), transparent 18rem),
+    var(--color-shine);
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+svg {
+  stroke-linecap: round;
+  shape-rendering: crispEdges;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-focus);
+  border-radius: 0.25rem;
+}
+

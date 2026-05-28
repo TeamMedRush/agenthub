@@ -1,0 +1,23 @@
+@keyframes scrollpop {
+  0% {
+    scale: 0.9;
+    opacity: 0;
+  }
+  
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
+
+.scrollpop {
+  position: relative;
+}
+
+.scrollpop > *:not(.hero),
+.scrollpop > *:not(.hero) * {
+  animation: scrollpop ease-in-out both;
+  animation-timeline: view();
+  animation-range: entry 5% cover 15%;
+}
+

@@ -1,0 +1,14 @@
+.trip-info {
+}
+
+.trip-info-icon {
+  min-width: 3.5rem;
+  min-height: 3.5rem;
+  flex-shrink: 0;
+  stroke-width: 2;
+  color: var(--color-shade);
+  background-color: var(--color-shine);
+  padding: 0.75rem;
+  border-radius: 0.75rem;
+}
+

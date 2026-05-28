@@ -22,11 +22,6 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --color-shine: #141824;
-    --color-shade: #f5f7fb;
-    --color-muted: #a7b1c5;
-    --color-surface: rgba(20, 27, 40, 0.88);
-    --shadow-soft: 0 24px 64px rgba(0, 0, 0, 0.35);
   }
 }
 

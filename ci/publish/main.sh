@@ -1,8 +1,6 @@
 git checkout gh-pages
 git pull origin gh-pages
 
-CNAME=$(cat CNAME)
-
 git checkout main
 git pull origin main
 git checkout --orphan gh-pages
@@ -23,7 +21,6 @@ rm -rf ./*
 mv .dist/* ./
 rm -rf .dist
 
-echo $CNAME > CNAME
 cp index.html 404.html
 
 git config user.name "Attachment Aditya"

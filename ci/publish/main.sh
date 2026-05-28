@@ -1,7 +1,7 @@
 git checkout gh-pages
 git pull origin gh-pages
 
-CNAME=$((cat CNAME))
+CNAME=$(cat CNAME)
 
 git checkout main
 git pull origin main
@@ -24,6 +24,7 @@ mv .dist/* ./
 rm -rf .dist
 
 echo $CNAME > CNAME
+cp index.html 404.html
 
 git config user.name "Attachment Aditya"
 git config user.email "attachment.aditya@gmail.com"

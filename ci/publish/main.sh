@@ -30,6 +30,6 @@ git config user.name "Attachment Aditya"
 git config user.email "attachment.aditya@gmail.com"
 
 git add .
-git commit -m "Deploy to GitHub Pages"
+git commit -m "Deploy using GitHub Pages"
 git push origin gh-pages --force
 
